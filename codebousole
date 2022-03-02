@@ -1,0 +1,40 @@
+from microbit import *
+
+compass.calibrate()
+
+N = Image("50005:"
+          "55005:"
+          "50505:"
+          "50055:"
+          "50005:")
+
+S = Image("55550:"
+          "00005:"
+          "05550:"
+          "50000:"
+          "05555:")
+
+E = Image("05550:"
+          "05000:"
+          "05500:"
+          "05000:"
+          "05550:")
+
+O = Image("00500:"
+          "05250:"
+          "52025:"
+          "05250:"
+          "00500:")
+
+while True:
+    if compass.heading() < 45 or compass.heading() > 315:
+        display.show(N)
+        
+    if compass.heading() > 165 and compass.heading() < 255:
+            display.show(S)
+        
+    if compass.heading() > 45 and compass.heading() < 165:
+            display.show(E)
+        
+    if compass.heading() > 225 and compass.heading() < 315:
+      display.show(O)
