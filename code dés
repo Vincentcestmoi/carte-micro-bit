@@ -1,0 +1,49 @@
+# carte-micro-bit
+code dés
+
+from microbit import *
+from random import randint
+nombre = 0
+
+un = Image("00000:"
+          "07970:"
+          "09990:"
+          "07970:"
+          "00000:")
+
+deux = Image("00000:"
+          "09000:"
+          "00000:"
+          "00090:"
+          "00000:")
+
+trois = Image("90000:"
+          "00000:"
+          "00900:"
+          "00000:"
+          "00009:")
+
+quatre = Image("00000:"
+          "09090:"
+          "00000:"
+          "09090:"
+          "00000:")
+
+cinq = Image("90009:"
+          "00000:"
+          "00900:"
+          "00000:"
+          "90009:")
+
+six = Image("09090:"
+          "00000:"
+          "09090:"
+          "00000:"
+          "09090:")
+
+image = [un, deux, trois, quatre, cinq, six]
+
+while True:
+  if accelerometer.was_gesture('shake'):
+    nombre = randint(0, 5)
+    display.show(image[nombre])
